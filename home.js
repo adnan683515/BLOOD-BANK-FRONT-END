@@ -5,7 +5,7 @@ async function LoadAllDonation() {
 
     try {
 
-        const donateFetch = await fetch('http://127.0.0.1:8000/donation/')
+        const donateFetch = await fetch('https://blood-bank-backend-beta.vercel.app/donation/')
         const data = await donateFetch.json()
         displayDonate(data)
 
@@ -39,7 +39,7 @@ async function displayDonate(data) {
 
                 try {
 
-                    const user = await fetch(`http://127.0.0.1:8000/DetailsUserView/${element?.user}/`)
+                    const user = await fetch(`https://blood-bank-backend-beta.vercel.app/DetailsUserView/${element?.user}/`)
                     const informaton = await user.json()
                     if (informaton !== undefined) {
 
@@ -168,7 +168,7 @@ async function searchDontate() {
     document.getElementById('searchBlood').value=""
 
     try {
-        const searchFetch = await fetch(`http://127.0.0.1:8000/searchBlood/${value}/`)
+        const searchFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/searchBlood/${value}/`)
         const data = await searchFetch.json()
         displayDonate(data)
     }

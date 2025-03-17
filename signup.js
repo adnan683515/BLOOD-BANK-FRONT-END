@@ -66,7 +66,7 @@ async function signupform(event) {
             registerObject.usertype = "Patiant"
         }
         try {
-            const userFetch = await fetch('http://127.0.0.1:8000/userdetails/')
+            const userFetch = await fetch('https://blood-bank-backend-beta.vercel.app/userdetails/')
             const data = await userFetch.json()
             const found = data.find(item => item.username === registerObject.username || item.email === registerObject.email);
             if (found) {
@@ -86,7 +86,7 @@ async function signupform(event) {
             return;
         }
         try {
-            const FH = await fetch('http://127.0.0.1:8000/register/', {
+            const FH = await fetch('https://blood-bank-backend-beta.vercel.app/register/', {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify(registerObject)
@@ -131,7 +131,7 @@ async function loginForm(event) {
     }
     try {
 
-        const loginFecth = await fetch('http://127.0.0.1:8000/login/', {
+        const loginFecth = await fetch('https://blood-bank-backend-beta.vercel.app/login/', {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(obj)
