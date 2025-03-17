@@ -22,7 +22,10 @@ fetch('nav.html')
             window.location.href = "login.html"
 
         })
-
+        
+        if(localStorage.getItem('Token')){
+            document.getElementById('donate-form').classList.remove('hidden')
+        }
         if (!localStorage.getItem('Token')) {
             document.getElementById('logout').classList.add('hidden')
         }
@@ -67,3 +70,8 @@ console.log(logout)
 // }
 
 // }
+
+
+document.getElementById('donate-form').addEventListener('click',()=>{
+    window.location.href="donate.html"
+})
