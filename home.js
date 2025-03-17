@@ -19,6 +19,7 @@ LoadAllDonation()
 
 async function displayDonate(data) {
 
+    
     if (data.length === 0) {
         document.getElementById('card-container').classList.add('hidden')
         document.getElementById('notDAtafound').classList.remove('hidden')

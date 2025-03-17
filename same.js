@@ -9,3 +9,7 @@ function getElementByIdOfValue(id){
 function getElementByIdOfInnerText(id){
     return document.getElementById(id).innerText;
 }
+
+function valueNone(id){
+    document.getElementById(id).value=""
+}
