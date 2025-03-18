@@ -19,22 +19,44 @@ LoadAllDonation()
 
 async function displayDonate(data) {
 
-    
+
     if (data.length === 0) {
         document.getElementById('card-container').classList.add('hidden')
-        document.getElementById('notDAtafound').classList.remove('hidden')
+
+
+        document.getElementById('loading').style.display = 'block'
+        async function load() {
+            await setTimeout(() => {
+                document.getElementById('loading').style.display = 'none'
+                document.getElementById('notDAtafound').classList.remove('hidden')
+            }, 3000);
+        }
+        load()
+
+        // document.getElementById('notDAtafound').classList.remove('hidden')
         return;
     }
 
     try {
 
+
+
         document.getElementById('notDAtafound').classList.add('hidden')
+        document.getElementById('loading').style.display = 'none'
         document.getElementById('card-container').classList.remove('hidden')
         document.getElementById('card-container').innerHTML = ""
+        document.getElementById('loading').style.display = 'block'
+        async function AgainLoad() {
+            await setTimeout(() => {
+                document.getElementById('loading').style.display = 'none'
+
+            }, 2000);
+        }
+        AgainLoad()
         data.forEach(element => {
 
 
-            console.log(element?.user,element)
+            console.log(element?.user, element)
 
             async function userDetails() {
 
@@ -57,8 +79,8 @@ async function displayDonate(data) {
                         const div = document.createElement('div')
                         div.classList.add('col-span-1')
                         div.classList.add('p-2')
-                        
-                        
+
+
 
 
                         div.innerHTML = `
@@ -167,7 +189,7 @@ async function details(...data) {
 async function searchDontate() {
 
     const value = document.getElementById('searchBlood').value;
-    document.getElementById('searchBlood').value=""
+    document.getElementById('searchBlood').value = ""
 
     try {
         const searchFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/searchBlood/${value}/`)
