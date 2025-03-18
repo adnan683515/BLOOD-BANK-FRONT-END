@@ -117,14 +117,17 @@ async function displayDonate(data) {
                         const parent = document.getElementById('card-container')
                         const div = document.createElement('div')
                         div.classList.add('col-span-1')
-                        div.classList.add('p-2')
+                        div.classList.add('p-2')   
+                        div.classList.add('rounded-md')   
+                        div.classList.add('transition','duration-300','ease-in-out','transform','hover:shadow-2xl','hover:scale-105')
+                        // bg-white p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:shadow-2xl hover:scale-105
 
 
 
 
                         div.innerHTML = `
                         
-                            <div class="card  w-80   shadow-lg py-2">
+                            <div class="card rounded-md w-80    py-2">
                                         <div class="center">
                                             <div class="avatar tooltip" data-tip="${element?.bloodType} ${usertype}">
                                                 <div class="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
