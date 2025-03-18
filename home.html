@@ -14,7 +14,6 @@
         rel="stylesheet">
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -64,7 +63,7 @@
 
 
 
-        <div class="flex lg:flex-row flex-col lg:h-[60vh] border justify-between">
+        <div class="flex lg:flex-row flex-col lg:h-[60vh]  justify-between">
             <div class="lg:w-[30%]  poppins  flex items-center pl-4">
 
                 <div class="space-y-2">
@@ -87,25 +86,114 @@
 
     </header>
 
-    <main>
+    <main class="">
+
+
+
+
+
+
 
 
 
 
 
         <!--    input section -->
-        <section class="flex justify-end  mx-3 mt-3">
-            <div class="flex">
+        <section class=" w-[95%] mx-auto mb-4">
 
-                <input id="searchBlood" type="text" placeholder="search Blood"
-                    class="border-1 rounded-l-full border-b-red-600 border-t-red-400 border-l-red-500 px-5 py-3 input-md" />
+            <div class="flex lg:justify-between flex-col lg:flex-row">
+                <div>
+                    <div class="lg:stats  shadow">
+                        <div class="stat">
+                            <div class="stat-figure text-primary bg-red-500 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block h-8 w-8 stroke-current text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div class="stat-title">
+                                <h1>Total B+</h1>
+                            </div>
+                            <div class="stat-value text-primary">25.6K</div>
+                            <div class="stat-desc">21% more than last month</div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-figure text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block h-5 w-8 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="stat-title">Page Views</div>
+                            <div class="stat-value text-secondary">2.6M</div>
+                            <div class="stat-desc">21% more than last month</div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-figure text-secondary">
+                                <div class="avatar online">
+                                    <div class="w-16 rounded-full">
+                                        <img
+                                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-value">86%</div>
+                            <div class="stat-title">Tasks done</div>
+                            <div class="stat-desc text-secondary">31 tasks remaining</div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-figure text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block h-8 w-8 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-title">Total Likes</div>
+                            <div class="stat-value text-primary">25.6K</div>
+                            <div class="stat-desc">21% more than last month</div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-figure text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    class="inline-block h-8 w-8 stroke-current">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="stat-title">Total Likes</div>
+                            <div class="stat-value text-primary">25.6K</div>
+                            <div class="stat-desc">21% more than last month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center lg:w-1/2  mt-3 lg:mt-0">
+                    <div class="flex   h-15">
+
+
+                        <input id="searchBlood" type="text" placeholder="search Blood"
+                            class="border-1 rounded-l-full border-b-red-600 border-t-red-400 border-l-red-500 px-10 py-3 input-md" />
 
 
 
-                <button onclick="searchDontate()" type="button"
-                    class="text-white px-3 rounded-r-full bg-red-800">search</button>
+                        <button onclick="searchDontate()" type="button"
+                            class="text-white px-3 rounded-r-full bg-red-800">search</button>
 
 
+
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -113,7 +201,7 @@
 
 
         <!-- filter section left side and donar section right side -->
-        <section class="flex justify-center">
+        <section class="flex justify-center  ">
             <div class="my-5">
 
                 <div class="">
@@ -130,7 +218,7 @@
                     </div>
 
 
-                    <div id="card-container" class="flex-1   grid  lg:grid-cols-5 gap-2 ">
+                    <div id="card-container" class="grid lg:grid-cols-4 gap-1 ">
 
                         <!-- display donate item -->
                     </div>
@@ -158,6 +246,12 @@
                 </div>
             </div>
         </dialog>
+
+
+
+
+
+
 
 
     </main>

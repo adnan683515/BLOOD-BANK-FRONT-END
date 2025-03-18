@@ -22,13 +22,13 @@ fetch('nav.html')
             window.location.href = "login.html"
 
         })
-        
-        if(localStorage.getItem('Token')){
-            document.getElementById('donate-form').classList.remove('hidden')
-        }
-        if (!localStorage.getItem('Token')) {
-            document.getElementById('logout').classList.add('hidden')
-        }
+
+        // if (localStorage.getItem('Token')) {
+        //     document.getElementById('sidebar').innerHTML += ` <button id="toggleSidebar" class="p-2 bg-white text-blue-500 font-semibold rounded">
+        //     Open Sidebar
+        // </button>`
+        // }
+
         if (localStorage.getItem('Token') && localStorage.getItem('user')) {
             document.getElementById('signup').classList.add('hidden')
             document.getElementById('login').classList.add('hidden')
@@ -56,22 +56,7 @@ fetch('nav.html')
 
 
 
-const logout = document.getElementById('logout')
-console.log(logout)
 
-// const logutfecth = await fetch('http://127.0.0.1:8000/logout/')
-// const res = logutfecth.json()
-// if (res) {
-//     localStorage.removeItem('Token')
-//     localStorage.removeItem('user')
-//     localStorage.removeItem('is_stuff')
-//     localStorage.removeItem('pic')
-//     window.location.href = "login.html"
-// }
-
-// }
-
-
-document.getElementById('donate-form').addEventListener('click',()=>{
-    window.location.href="donate.html"
+document.getElementById('donate-form').addEventListener('click', () => {
+    window.location.href = "donate.html"
 })

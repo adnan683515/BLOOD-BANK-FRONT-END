@@ -138,7 +138,7 @@ async function loginForm(event) {
 
         const loginFecth = await fetch('https://blood-bank-backend-beta.vercel.app/login/', {
             method: "POST",
-            headers: { "Content-type": "application/json" },
+            headers: { "Content-type": "application/json"},
             body: JSON.stringify(obj)
         })
 

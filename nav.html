@@ -26,6 +26,14 @@
         .white-1 {
             color: #edede9;
         }
+
+        .sidebar-closed {
+            transform: translateX(-100%);
+        }
+
+        .sidebar-open {
+            transform: translateX(0);
+        }
     </style>
 </head>
 
@@ -39,9 +47,11 @@
 
         <nav>
             <div class="navbar bg-red-700 shadow-sm">
-                <div class="flex-1">
+                <div class="flex-1" id="sidebar">
                     <a href="home.html" class="btn  btn-ghost text-xl"><img class="h-10  rounded-full w-auto"
                             src="picture/lgo.jpg" alt="Your Company"></a>
+
+                    
                 </div>
                 <div class="flex-none">
                     <div class="dropdown dropdown-end">
@@ -86,6 +96,11 @@
                             <li id="signup" class="hidden"><a class="hidden" href="signup.html">signup</a></li>
                             <li id="login"><a href="login.html">login</a></li>
                             <li id="donate-post">Donate</li>
+                            <li>
+                                <button id="toggleSidebar" class="p-2 text-blue-500 font-semibold rounded">
+                                    Open Sidebar
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -99,6 +114,8 @@
     <main>
 
 
+
+        
 
 
     </main>

@@ -34,19 +34,25 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
 
     console.log(center, birth, bloodtype, lastDonate, ck, address, zila)
 
+    const token = localStorage.getItem('Token')
+    console.log(token)
 
     async function donateBlood() {
 
         try {
-            const donateFetch = await fetch('http://127.0.0.1:8000/donation/', {
+            const donateFetch = await fetch('https://blood-bank-backend-beta.vercel.app/donation/', {
 
                 method: "POST",
-                headers: { "Content-type": "application/json" },
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": `Token ${token}`
+
+                },
                 body: JSON.stringify(obj)
 
             })
             const res = donateFetch.json()
-        
+
             console.log(res)
         }
         catch {

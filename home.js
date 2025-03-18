@@ -34,7 +34,7 @@ async function displayDonate(data) {
         data.forEach(element => {
 
 
-            console.log(element)
+            console.log(element?.user,element)
 
             async function userDetails() {
 
@@ -57,6 +57,7 @@ async function displayDonate(data) {
                         const div = document.createElement('div')
                         div.classList.add('col-span-1')
                         div.classList.add('p-2')
+                        
                         
 
 
@@ -89,7 +90,7 @@ async function displayDonate(data) {
                                             </div>
                                             <div class="card-actions justify-center">
                                                 
-                                                <button onclick="details('${picture}','${first_name}','${last_name}','${email}','${element?.address}','${mobile}','${usertype}','${element?.last_donation_date}','${element?.donation_center}','${element?.distics}','${element?.eligibility}','${element?.date_of_birth}','${element?.bloodType}')" class="btn">Default</button>
+                                                <button onclick="details('${picture}','${first_name}','${last_name}','${email}','${element?.address}','${mobile}','${usertype}','${element?.last_donation_date}','${element?.donation_center}','${element?.distics}','${element?.eligibility}','${element?.date_of_birth}','${element?.bloodType}')" class="btn">Details</button>
                                                 
                                             </div>
                                         </div>
@@ -177,4 +178,6 @@ async function searchDontate() {
         console.log("Search donate funciton errror")
     }
 
+
 }
+
