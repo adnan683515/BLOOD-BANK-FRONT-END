@@ -17,6 +17,14 @@ async function LoadAllDonation() {
 LoadAllDonation()
 
 
+
+let BPOSI = 0;
+let BNEGi = 0;
+let APOSI  = 0;
+let ANEGI  = 0;
+let ABPOSI  = 0;
+let OPOSI  = 0;
+let ONEGI  = 0;
 async function displayDonate(data) {
 
 
@@ -39,6 +47,8 @@ async function displayDonate(data) {
 
     try {
 
+    
+
 
 
         document.getElementById('notDAtafound').classList.add('hidden')
@@ -54,6 +64,31 @@ async function displayDonate(data) {
         }
         AgainLoad()
         data.forEach(element => {
+
+            if(element?.bloodType){
+                const blood = element?.bloodType;
+                if(blood === 'A+'){
+                    APOSI+=1;
+                }
+                else if(blood==='AB+'){
+                    ABPOSI+=1;
+                }
+                else if(blood === 'B+'){
+                    BPOSI+=1;
+                }
+                else if(blood === 'B-'){
+                    BNEGi+=1;
+                }
+                else if(blood === 'O+'){
+                    OPOSI+=1;
+                }
+                else if(blood === 'O-'){
+                    ONEGI+=1;
+                }
+                else{
+                    ANEGI+=1;
+                }
+            }
 
 
             console.log(element?.user, element)
@@ -135,6 +170,12 @@ async function displayDonate(data) {
 
 
         });
+        SetInnerTExt('BPOS',BPOSI)
+        SetInnerTExt('BNEG',BNEGi)
+        SetInnerTExt('APOS',APOSI)
+        SetInnerTExt('ABPOS',ABPOSI)
+        SetInnerTExt('ONEG',ONEGI)
+        console.log(APOSI,BPOSI,ABPOSI,BNEGi,BPOSI,ONEGI,OPOSI)
     }
     catch {
         console.log("displaydonate function a display korte problem hocce")
