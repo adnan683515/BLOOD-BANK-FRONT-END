@@ -23,6 +23,7 @@ let BNEGi = 0;
 let APOSI  = 0;
 let ANEGI  = 0;
 let ABPOSI  = 0;
+let ABNEGI  = 0;
 let OPOSI  = 0;
 let ONEGI  = 0;
 async function displayDonate(data) {
@@ -84,6 +85,9 @@ async function displayDonate(data) {
                 }
                 else if(blood === 'O-'){
                     ONEGI+=1;
+                }
+                else if(blood === 'AB-'){
+                    ABNEGI+=1;
                 }
                 else{
                     ANEGI+=1;
@@ -171,10 +175,26 @@ async function displayDonate(data) {
 
         });
         SetInnerTExt('BPOS',BPOSI)
+        ValuSet('BPROG',BPOSI)
+
         SetInnerTExt('BNEG',BNEGi)
+        ValuSet('BNEGPROG',BNEGi)
+
         SetInnerTExt('APOS',APOSI)
+        ValuSet('AGPROG',APOSI)
+
         SetInnerTExt('ABPOS',ABPOSI)
+        ValuSet('ABGPROG',ABPOSI)
+
         SetInnerTExt('ONEG',ONEGI)
+        ValuSet('ONEGIPROG',ONEGI)
+
+        SetInnerTExt('ABNEG',ABNEGI)
+        ValuSet('ABNEGIPROG',ABNEGI)
+
+        SetInnerTExt('ANEG',ANEGI)
+        ValuSet('ANEGIPROG',ANEGI)
+        
         console.log(APOSI,BPOSI,ABPOSI,BNEGi,BPOSI,ONEGI,OPOSI)
     }
     catch {

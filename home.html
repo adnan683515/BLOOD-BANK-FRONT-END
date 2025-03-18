@@ -102,93 +102,81 @@
         <section class=" w-[95%] mx-auto mb-4">
 
             <div class="flex lg:justify-between flex-col lg:flex-row">
-                <div>
-                    <div class="grid lg:grid-cols-4 gap-2">
+                <div class="lg:center">
+                    <div class="grid lg:grid-cols-5   gap-4">
                         <div class="stat">
-                            <div class="stat-figure text-primary bg-red-500 p-2 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-8 w-8 stroke-current text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
+                            <div class="stat-figure text-white bg-red-500 px-3 py-3 rounded-full">
+                                B+
                             </div>
 
                             <div class="stat-title">
                                 <h1>Total B+</h1>
                             </div>
-                            <div class="stat-value"><h1 class="font-semibold text-red-400 text-xl" id="BPOS">00</h1></div>
-                            <div class="stat-desc">21% more than last month</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-500 text-xl" id="BPOS">00</h1></div>
+                            <div class="stat-desc"><progress id="BPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
                         </div>
 
                         <div class="stat">
-                            <div class="stat-figure  text-secondary bg-red-600 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-10 w-10 stroke-current text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
+                            <div class="stat-figure px-3 py-2  text-white bg-red-600 rounded-full">
+                                B-
                             </div>
                             <div class="stat-title">Total B-</div>
-                            <div class="stat-value"><h1 class="font-semibold text-red-500 text-xl" id="BNEG">00</h1></div>
-                            <div class="stat-desc">21% more than last month</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-600 text-xl" id="BNEG">00</h1></div>
+                            <div class="stat-desc"><progress id="BNEGPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
                         </div>
 
                         <div class="stat">
-                            <div class="stat-figure  text-secondary bg-red-700 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-10 w-10 stroke-current text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
+                            <div class="stat-figure  text-white px-3 py-3 bg-red-700 rounded-full">
+                                A+
                             </div>
                             <div class="stat-title">Total A+</div>
-                            <div class="stat-value"><h1 class="font-semibold text-red-600 text-xl" id="APOS">00</h1></div>
-                            <div class="stat-desc">21% more than last month</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-700 text-xl" id="APOS">00</h1></div>
+                            <div class="stat-desc"><progress id="AGPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
                         </div>
 
                         <div class="stat">
-                            <div class="stat-figure  text-secondary bg-red-800 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-10 w-10 stroke-current text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
+                            <div class="stat-figure px-3 py-3  text-white bg-red-800 rounded-full">
+                                AB+
                             </div>
                             <div class="stat-title">Total AB+</div>
-                            <div class="stat-value"><h1 class="font-semibold text-red-700 text-xl" id="ABPOS">00</h1></div>
-                            <div class="stat-desc">21% more than last month</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-800 text-xl" id="ABPOS">00</h1></div>
+                            <div class="stat-desc"><progress id="ABGPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
                         </div>
 
                         <div class="stat">
-                            <div class="stat-figure  text-secondary bg-red-900 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-10 w-10 stroke-current text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
+                            <div class="stat-figure px-3 py-3  text-white bg-red-500 rounded-full">
+                                O-
                             </div>
                             <div class="stat-title">Total O-</div>
-                            <div class="stat-value"><h1 class="font-semibold text-red-700 text-xl" id="ONEG">00</h1></div>
-                            <div class="stat-desc">21% more than last month</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-500 text-xl" id="ONEG">00</h1></div>
+                            <div class="stat-desc"><progress id="ONEGIPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
                         </div>
 
                         <div class="stat">
-                            <div class="stat-figure  text-secondary bg-red-700 rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    class="inline-block h-10 w-10 stroke-current text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
+                            <div class="stat-figure px-3 py-3  text-white bg-red-600 rounded-full">
+                                O+
                             </div>
                             <div class="stat-title">Total O+</div>
-                            <div class="stat-value"><h1 class="font-semibold text-red-700 text-xl" id="OPOS">00</h1></div>
-                            <div class="stat-desc">21% more than last month</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-600 text-xl" id="OPOS">00</h1></div>
+                            <div class="stat-desc"><progress id="ONEGIPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-figure px-3 py-3  text-white bg-red-700 rounded-full">
+                                AB-
+                            </div>
+                            <div class="stat-title">Total AB-</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-700 text-xl" id="ABNEG">00</h1></div>
+                            <div class="stat-desc"><progress id="ABNEGIPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-figure px-4 py-3  text-white bg-red-800 rounded-full">
+                                A-
+                            </div>
+                            <div class="stat-title">Total A-</div>
+                            <div class="stat-value"><h1 class="font-semibold text-red-800 text-xl" id="ANEG">00</h1></div>
+                            <div class="stat-desc"><progress id="ANEGIPROG" class="progress progress-secondary w-56" value="00" max="100"></progress></div>
                         </div>
                     </div>
                 </div>

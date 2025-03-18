@@ -18,6 +18,10 @@ function SetInnerTExt(id,val){
     document.getElementById(id).innerText=`${val} Donar`
 }
 
+function ValuSet(id,val){
+    document.getElementById(id).value=val
+}
+
 // async function FindOUtLen(val) {
     
 //     const searchFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/searchBlood/${val}/`)
