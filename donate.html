@@ -71,15 +71,17 @@
 
         <!-- donation post -->
 
-        <div class="center mt-4">
+        <div class="center  lg:mt-20 mt-3">
             <h1 class="text-3xl font-semibold">Donation From</h1>
         </div>
 
         <section class="lg:h-[70vh] h-[100vh]">
 
 
+            <h1 class="text-center mt-5 text-green-600" id="donateSuccess"></h1>
             <div class="flex justify-center mt-4 items-center">
-                <form action="" class="grid lg:w-[50%] w-[90%] border border-gray-400 rounded-md px-3  lg:grid-cols-2 grid-cols-1">
+                <form action=""
+                    class="grid lg:w-[50%] w-[90%] border border-gray-400 rounded-md px-3  lg:grid-cols-2 grid-cols-1">
 
                     <fieldset class="fieldset">
                         <legend class="fieldset-legend">Your Address</legend>
@@ -89,7 +91,8 @@
 
                     <fieldset class="fieldset">
                         <legend class="fieldset-legend">Last Donation Date</legend>
-                        <input id="last-Donate" required type="date" class="input" placeholder="please give me your last donate date" />
+                        <input id="last-Donate" required type="date" class="input"
+                            placeholder="please give me your last donate date" />
 
                     </fieldset>
 
@@ -104,7 +107,7 @@
                     <fieldset class="fieldset">
                         <legend class="fieldset-legend">Date Of Birth</legend>
                         <input id="birth" required type="date" class="input" placeholder="Type here" />
-                        
+
                     </fieldset>
 
                     <fieldset class="fieldset">
@@ -203,20 +206,57 @@
                         <legend class="fieldset-legend">Are Your Ready Now for Donate Blood</legend>
                         <label class="fieldset-label">
                             <input id="check" type="checkbox" checked="checked" class="checkbox" />
-                            
+
                         </label>
                     </fieldset>
 
                     <div class="mt-2 mb-2">
-                        <button id="donate-post-btn" type="submit" class="px-5 rounded-r-full rounded-l-full text-white w-[80%] py-2 bg-red-700">SUBMIT</button>
+                        <button id="donate-post-btn" type="submit"
+                            class="px-5 rounded-r-full rounded-l-full text-white w-[80%] py-2 bg-red-700">SUBMIT</button>
                     </div>
-                    
+
                 </form>
-            
+
             </div>
         </section>
 
 
+
+        <section>
+
+            <div class="flex lg:justify-around  lg:flex-row flex-col  ">
+                <div class="center">
+                    <img src="picture/doanteForm.png" alt="">
+                </div>
+
+                <div class="center">
+                    <div id="request-donte" class="text-center hidden">
+                        <h1 class="w-1/2 m-auto text-center">You haven’t donated blood yet... Please consider donating blood and help save someone’s life</h1>
+                    
+                    </div>
+
+                    <div id="card-of-donate">
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- modal update -->
+
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="UpdateDonate" class="modal">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">Press ESC key or click outside to close</p>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
 
 
     </main>
