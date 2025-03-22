@@ -21,11 +21,9 @@ function SetInnerTExt(id,val){
 function ValuSet(id,val){
     document.getElementById(id).value=val
 }
+function innerTextNone(id){
+    document.getElementById(id).innerText=" "
+}
 
-// async function FindOUtLen(val) {
-    
-//     const searchFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/searchBlood/${val}/`)
-//     const data = await searchFetch.json()
-//     console.log(data)
-// }
+
 

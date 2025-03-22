@@ -20,12 +20,12 @@ LoadAllDonation()
 
 let BPOSI = 0;
 let BNEGi = 0;
-let APOSI  = 0;
-let ANEGI  = 0;
-let ABPOSI  = 0;
-let ABNEGI  = 0;
-let OPOSI  = 0;
-let ONEGI  = 0;
+let APOSI = 0;
+let ANEGI = 0;
+let ABPOSI = 0;
+let ABNEGI = 0;
+let OPOSI = 0;
+let ONEGI = 0;
 async function displayDonate(data) {
 
 
@@ -48,7 +48,7 @@ async function displayDonate(data) {
 
     try {
 
-    
+
 
 
 
@@ -66,31 +66,31 @@ async function displayDonate(data) {
         AgainLoad()
         data.forEach(element => {
 
-            if(element?.bloodType){
+            if (element?.bloodType) {
                 const blood = element?.bloodType;
-                if(blood === 'A+'){
-                    APOSI+=1;
+                if (blood === 'A+') {
+                    APOSI += 1;
                 }
-                else if(blood==='AB+'){
-                    ABPOSI+=1;
+                else if (blood === 'AB+') {
+                    ABPOSI += 1;
                 }
-                else if(blood === 'B+'){
-                    BPOSI+=1;
+                else if (blood === 'B+') {
+                    BPOSI += 1;
                 }
-                else if(blood === 'B-'){
-                    BNEGi+=1;
+                else if (blood === 'B-') {
+                    BNEGi += 1;
                 }
-                else if(blood === 'O+'){
-                    OPOSI+=1;
+                else if (blood === 'O+') {
+                    OPOSI += 1;
                 }
-                else if(blood === 'O-'){
-                    ONEGI+=1;
+                else if (blood === 'O-') {
+                    ONEGI += 1;
                 }
-                else if(blood === 'AB-'){
-                    ABNEGI+=1;
+                else if (blood === 'AB-') {
+                    ABNEGI += 1;
                 }
-                else{
-                    ANEGI+=1;
+                else {
+                    ANEGI += 1;
                 }
             }
 
@@ -117,9 +117,9 @@ async function displayDonate(data) {
                         const parent = document.getElementById('card-container')
                         const div = document.createElement('div')
                         div.classList.add('col-span-1')
-                        div.classList.add('p-2')   
-                        div.classList.add('rounded-md')   
-                        div.classList.add('transition','duration-300','ease-in-out','transform','hover:shadow-2xl','hover:scale-105')
+                        div.classList.add('p-2')
+                        div.classList.add('rounded-md')
+                        div.classList.add('transition', 'duration-300', 'ease-in-out', 'transform', 'hover:shadow-2xl', 'hover:scale-105')
                         // bg-white p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:shadow-2xl hover:scale-105
 
 
@@ -152,10 +152,11 @@ async function displayDonate(data) {
                                             <div class="">
                                                 <p class="poppins  w-full">Interested : ${element?.eligibility ? `<span class="bg-green-400 px-5 py-1 rounded-sm ">Yes</span>` : `<span class="bg-red-500 px-5 py-1 rounded-sm ">NO</span>`}</p>
                                             </div>
-                                            <div class="card-actions justify-center">
+                                            <div class="card-actions justify-between">
                                                 
                                                 <button onclick="details('${picture}','${first_name}','${last_name}','${email}','${element?.address}','${mobile}','${usertype}','${element?.last_donation_date}','${element?.donation_center}','${element?.distics}','${element?.eligibility}','${element?.date_of_birth}','${element?.bloodType}')" class="btn">Details</button>
                                                 
+                                            <button onclick="request.showModal(),requestForm('${element.id}','${username}','${element?.bloodType}','${element?.eligibility}')" class="btn">Request</button>
                                             </div>
                                         </div>
                                 </div>
@@ -177,33 +178,36 @@ async function displayDonate(data) {
 
 
         });
-        SetInnerTExt('BPOS',BPOSI)
-        ValuSet('BPROG',BPOSI)
+        SetInnerTExt('BPOS', BPOSI)
+        ValuSet('BPROG', BPOSI)
 
-        SetInnerTExt('BNEG',BNEGi)
-        ValuSet('BNEGPROG',BNEGi)
+        SetInnerTExt('BNEG', BNEGi)
+        ValuSet('BNEGPROG', BNEGi)
 
-        SetInnerTExt('APOS',APOSI)
-        ValuSet('AGPROG',APOSI)
+        SetInnerTExt('APOS', APOSI)
+        ValuSet('AGPROG', APOSI)
 
-        SetInnerTExt('ABPOS',ABPOSI)
-        ValuSet('ABGPROG',ABPOSI)
+        SetInnerTExt('ABPOS', ABPOSI)
+        ValuSet('ABGPROG', ABPOSI)
 
-        SetInnerTExt('ONEG',ONEGI)
-        ValuSet('ONEGIPROG',ONEGI)
+        SetInnerTExt('ONEG', ONEGI)
+        ValuSet('ONEGIPROG', ONEGI)
 
-        SetInnerTExt('ABNEG',ABNEGI)
-        ValuSet('ABNEGIPROG',ABNEGI)
+        SetInnerTExt('ABNEG', ABNEGI)
+        ValuSet('ABNEGIPROG', ABNEGI)
 
-        SetInnerTExt('ANEG',ANEGI)
-        ValuSet('ANEGIPROG',ANEGI)
-        
-        console.log(APOSI,BPOSI,ABPOSI,BNEGi,BPOSI,ONEGI,OPOSI)
+        SetInnerTExt('ANEG', ANEGI)
+        ValuSet('ANEGIPROG', ANEGI)
+
+        console.log(APOSI, BPOSI, ABPOSI, BNEGi, BPOSI, ONEGI, OPOSI)
     }
     catch {
         console.log("displaydonate function a display korte problem hocce")
     }
 
+}
+function dontGiveBlood() {
+    alert("Donor won't give blood now")
 }
 
 async function details(...data) {
@@ -264,6 +268,72 @@ async function searchDontate() {
         console.log("Search donate funciton errror")
     }
 
+
+}
+
+
+
+let donateid = null
+let eligibility = null
+async function requestForm(...rest) {
+    const [id, name, blood, intrarested] = rest
+    donateid = id
+    eligibility = intrarested
+    console.log(name, blood)
+    innerTextNone('req-username')
+    innerTextNone('blood-req')
+    SetInnerTExt('req-username', name)
+    SetInnerTExt('blood-req', blood)
+    console.log(donateid)
+}
+
+async function requestFormSubmit(event) {
+    event.preventDefault();
+    const userid = localStorage.getItem('user')
+
+    let quantity = parseInt(getElementByIdOfValue('quantity'))
+
+    if (quantity <= 0) {
+        alert("Please Type postivite value")
+        return;
+    }
+
+    const obj = {
+        user: userid,
+        DonateBlood: donateid,
+        numberOfBag: quantity,
+        donateDate: getElementByIdOfValue('donate-date'),
+        place: getElementByIdOfValue('place'),
+        mobile: getElementByIdOfValue('mobile'),
+        status: 'pending',
+        massage: getElementByIdOfValue('condition')
+    }
+
+
+    try {
+
+        const donateFetach = await fetch('http://127.0.0.1:8000/bloodRequest/', {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(obj)
+
+        })
+        const res = await donateFetach.json()
+
+        if (donateFetach.status === 200) {
+            console.log("donate req done")
+            SetInnerTExt('success', "Successfully Your Request Done Please waiting for approved!!")
+            valueNone('quantity')
+            valueNone('donate-date')
+            valueNone('place')
+            valueNone('mobile')
+            valueNone('condition')
+        }
+    }
+    catch {
+
+        console.log("donate request submit from a post korte problemhocce")
+    }
 
 }
 

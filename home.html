@@ -67,8 +67,10 @@
             <div class="lg:w-[30%]  poppins  flex items-center pl-4">
 
                 <div class="space-y-2 mt-6 lg:mt-0">
-                    <h1 class="text-3xl font-semibold"><span class="text-red-600 ml-10 lg:ml-0 lg:text-start">Your Blood</span>, Their Hope </h1>
-                    <p class="text-center lg:text-start mt-4 lg:mt-0 lg:pr-0 pr-4">Your donated blood could be someone's last hope. Every moment, many people face life-threatening
+                    <h1 class="text-3xl font-semibold"><span class="text-red-600 ml-10 lg:ml-0 lg:text-start">Your
+                            Blood</span>, Their Hope </h1>
+                    <p class="text-center lg:text-start mt-4 lg:mt-0 lg:pr-0 pr-4">Your donated blood could be someone's
+                        last hope. Every moment, many people face life-threatening
                         situations due to a lack of blood, and you can be the light in their darkest hour. Your small
                         act of generosity, a blood donation, can bring new hope to countless lives. Let’s ignite hope in
                         their hearts by donating your blood and giving them a chance to live.</p>
@@ -94,7 +96,7 @@
 
 
 
-     
+
 
 
 
@@ -273,7 +275,7 @@
         <!-- details modal -->
 
 
-        <dialog id="details_modal" class="modal bg-[url(picture/blood2.png)]">
+        <dialog id="details_modal" class="modal">
             <div class="modal-box">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -285,7 +287,85 @@
             </div>
         </dialog>
 
+        <!-- request modal -->
+        <!-- You can open the modal using ID.showModal() method -->
 
+
+
+
+        <dialog id="request" class="modal  bg-[url(picture/blood2.png)]">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="text-lg font-bold">Request Form!</h3>
+                <div class="w-[100%]  bg-red-700  rounded-md mx-auto ">
+
+                    <div class="flex justify-between px-4 pt-2 pb-1 poppins text-white rounded-md">
+                        <h1 > <span id="req-username"></span></h1>
+                        <h1 > <span id="blood-req"></span>
+                        </h1>
+                    </div>
+
+
+                    <h1 id="success" class=" poppins text-center text-white my-1"></h1>
+                    <form onsubmit="requestFormSubmit(event)"  class="space-y-1 pl-4 pb-4 pr-4" action="">
+
+                
+
+
+                        <div class="w-full">
+
+                            <fieldset class="fieldset">
+                                <legend class="fieldset-legend"><span class="text-white poppins">Quantity:</span> </legend>
+                                <input required id="quantity" type="text" class="input" placeholder="Number Of Bag" />
+
+                            </fieldset>
+                        </div>
+
+                        <div>
+                            <fieldset class="fieldset">
+                                <legend class="fieldset-legend"><span class="text-white poppins">Donate Date</span>
+                                </legend>
+                                <input required id="donate-date" type="date" class="input" placeholder="enter donate date" />
+
+                            </fieldset>
+                        </div>
+
+                        <div class="w-full">
+                            <fieldset class="fieldset">
+                                <legend class="fieldset-legend"><span class="text-white poppins">Mobile: </span></legend>
+                                <input required id="mobile" type="text" class="input" placeholder="Your Mobile Number" />
+                            </fieldset>
+                        </div>
+
+
+                        <div class="w-full">
+                            <fieldset class="fieldset">
+                                <legend class="fieldset-legend"><span class="text-white poppins">Place: </span></legend>
+                                <input required id="place" type="text" class="input" placeholder="donate place" />
+                            </fieldset>
+                        </div>
+
+                        <div class="w-full">
+                            <fieldset class="fieldset">
+                                <legend class="fieldset-legend"><span class="text-white poppins">Patient condition: </span></legend>
+                                <textarea required id="condition" class="input" placeholder="patient codition"></textarea>
+                            </fieldset>
+                        </div>
+
+
+
+                        <div>
+                            <button class="btn btn-md sm:btn-sm md:btn-md lg:btn-md ">Responsive</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </dialog>
 
 
 
