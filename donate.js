@@ -11,6 +11,12 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
     const checkbox = document.getElementById('check')
     const address = getElementByIdOfValue('address')
     const zila = getElementByIdOfValue('zila')
+
+    if(!center || !birth || !bloodtype || !address || !zila){
+        alert("please fill up all data!")
+        return;
+    }
+
     let ck = false
     if (checkbox.checked) {
         ck = true
@@ -43,25 +49,19 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
 
         try {
             const donateFetch = await fetch('https://blood-bank-backend-beta.vercel.app/donation/', {
-
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
                     "Authorization": `Token ${token}`
-
                 },
                 body: JSON.stringify(obj)
-
             })
-            console.log(donateFetch)
-
             const res = donateFetch.json()
-
+            console.log(res)
+            console.log(donateFetch)
             if (donateFetch.status === 200) {
                 document.getElementById('donateSuccess').innerText = `Your Donate successfully!`
                 localStorage.setItem('Donate', 'Done')
-
-
             }
 
         }
@@ -83,6 +83,7 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
 async function successfullyDonateCard(user) {
 
     const donate = localStorage.getItem('Donate')
+    console.log(donate)
     if (donate !== 'Done') {
         document.getElementById('request-donte').classList.remove('hidden')
         return;

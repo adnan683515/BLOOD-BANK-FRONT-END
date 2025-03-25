@@ -28,11 +28,11 @@ let OPOSI = 0;
 let ONEGI = 0;
 async function displayDonate(data) {
 
+    const tkn = localStorage.getItem('Token')
+
 
     if (data.length === 0) {
         document.getElementById('card-container').classList.add('hidden')
-
-
         document.getElementById('loading').style.display = 'block'
         async function load() {
             await setTimeout(() => {
@@ -41,16 +41,9 @@ async function displayDonate(data) {
             }, 3000);
         }
         load()
-
-        // document.getElementById('notDAtafound').classList.remove('hidden')
         return;
     }
-
     try {
-
-
-
-
 
         document.getElementById('notDAtafound').classList.add('hidden')
         document.getElementById('loading').style.display = 'none'
@@ -93,10 +86,6 @@ async function displayDonate(data) {
                     ANEGI += 1;
                 }
             }
-
-
-            console.log(element?.user, element)
-
             async function userDetails() {
 
                 try {
@@ -105,7 +94,7 @@ async function displayDonate(data) {
                     const informaton = await user.json()
                     if (informaton !== undefined) {
 
-                        // console.log(informaton)
+                        console.log(tkn)
 
 
                         const { picture, username, first_name, last_name, email, mobile, usertype } = informaton;
@@ -120,10 +109,6 @@ async function displayDonate(data) {
                         div.classList.add('p-2')
                         div.classList.add('rounded-md')
                         div.classList.add('transition', 'duration-300', 'ease-in-out', 'transform', 'hover:shadow-2xl', 'hover:scale-105')
-                        // bg-white p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:shadow-2xl hover:scale-105
-
-
-
 
                         div.innerHTML = `
                         
@@ -156,7 +141,13 @@ async function displayDonate(data) {
                                                 
                                                 <button onclick="details('${picture}','${first_name}','${last_name}','${email}','${element?.address}','${mobile}','${usertype}','${element?.last_donation_date}','${element?.donation_center}','${element?.distics}','${element?.eligibility}','${element?.date_of_birth}','${element?.bloodType}')" class="btn">Details</button>
                                                 
-                                            <button onclick="request.showModal(),requestForm('${element.id}','${username}','${element?.bloodType}','${element?.eligibility}')" class="btn">Request</button>
+
+                                                <div id="request-btn-validation">
+
+                                                    <button onclick="request.showModal(),requestForm('${element.id}','${username}','${element?.bloodType}','${element?.eligibility}')" class="btn">Request</button>
+                                                
+
+                                                </div>
                                             </div>
                                         </div>
                                 </div>
@@ -164,7 +155,9 @@ async function displayDonate(data) {
                         
                         
                         `
+
                         parent.appendChild(div)
+                
                     }
 
                 }
@@ -290,14 +283,11 @@ async function requestForm(...rest) {
 async function requestFormSubmit(event) {
     event.preventDefault();
     const userid = localStorage.getItem('user')
-
     let quantity = parseInt(getElementByIdOfValue('quantity'))
-
     if (quantity <= 0) {
         alert("Please Type postivite value")
         return;
     }
-
     const obj = {
         user: userid,
         DonateBlood: donateid,
