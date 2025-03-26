@@ -11,6 +11,19 @@ fetch('nav.html')
         const token = localStorage.getItem('Token')
 
         if (!token) {
+
+            document.getElementById('sidebar').innerHTML += `
+            <a href="login.html" class=""><img class="h-10  rounded-full w-auto"
+                        src="picture/lgo.jpg" alt="Your Company"></a>
+            
+            `
+            document.getElementById('cart-container').innerHTML += `
+            
+                    
+                    <div class="card-actions">
+                    <a href="login.html" > <button  class="px-2 py-2 text-white rounded-md   btn-block bg-red-700">View All Request</button> </a>
+                    </div>
+            `
             navItemContainer.innerHTML += `
                         <li id="signup"><a href="signup.html">signup</a></li>
                             <li id="login"><a href="login.html">login</a></li>
@@ -19,8 +32,21 @@ fetch('nav.html')
         }
 
         if (token) {
+            document.getElementById('sidebar').innerHTML += `
+            <a href="home.html" class=""><img class="h-10  rounded-full w-auto"
+                        src="picture/lgo.jpg" alt="Your Company"></a>
+            
+            `
+            document.getElementById('cart-container').innerHTML += `
+                        <span class="text-lg font-bold">8 Request</span>
+                                
+                                <div class="card-actions">
+                                    <button id="all-request-btn" class="px-2 py-2 text-white rounded-md   btn-block bg-red-700">View All Request</button>
+                                </div>
+            `
+
             navItemContainer.innerHTML += `
-            <a class="cursor-pointer" href="profile.html" id="profileLi">Profile</a>
+        
             <a class="cursor-pointer" id="logout">logout</a>
             <a class="cursor-pointer" href="donate.html" id="donate-post">Donate</a>
             
@@ -37,6 +63,10 @@ fetch('nav.html')
             localStorage.removeItem('donate_id')
             window.location.href = "login.html"
 
+        })
+
+        document.getElementById('all-request-btn').addEventListener('click', () => {
+            window.location.href = "profile.html"
         })
         if (picture) {
             nav_img.src = ""
@@ -58,15 +88,21 @@ fetch('nav.html')
 
 
 async function setDoanteId() {
+    const user_id = localStorage.getItem('user')
+    if (!user_id) {
+        return;
+    }
 
     try {
 
-        const user_id = localStorage.getItem('user')
+
         const donateFetch = await fetch(`http://127.0.0.1:8000/doanteDetails/${user_id}/`)
         const data = await donateFetch.json()
-        console.log(data)
-        localStorage.setItem('donate_id',`${data.id}`)
-        
+        if (data.done) {
+            localStorage.setItem('Donate', 'Done')
+        }
+        localStorage.setItem('donate_id', `${data.id}`)
+
     }
     catch {
         console.log("setDonateId function a problem")

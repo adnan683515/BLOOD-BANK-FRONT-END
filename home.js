@@ -94,7 +94,7 @@ async function displayDonate(data) {
                     const informaton = await user.json()
                     if (informaton !== undefined) {
 
-                        console.log(tkn)
+                
 
 
                         const { picture, username, first_name, last_name, email, mobile, usertype } = informaton;
@@ -192,7 +192,7 @@ async function displayDonate(data) {
         SetInnerTExt('ANEG', ANEGI)
         ValuSet('ANEGIPROG', ANEGI)
 
-        console.log(APOSI, BPOSI, ABPOSI, BNEGi, BPOSI, ONEGI, OPOSI)
+        
     }
     catch {
         console.log("displaydonate function a display korte problem hocce")
@@ -205,7 +205,7 @@ function dontGiveBlood() {
 
 async function details(...data) {
     const [pic, first_name, last_name, email, address, mobile, usertype, last_donation_date, donation_center, distics, dibo, date_of_birth, bloodType] = data
-    console.log(pic, dibo)
+    
     details_modal.showModal()
 
 
@@ -272,12 +272,12 @@ async function requestForm(...rest) {
     const [id, name, blood, intrarested] = rest
     donateid = id
     eligibility = intrarested
-    console.log(name, blood)
+    
     innerTextNone('req-username')
     innerTextNone('blood-req')
     SetInnerTExt('req-username', name)
     SetInnerTExt('blood-req', blood)
-    console.log(donateid)
+    
 }
 
 async function requestFormSubmit(event) {
@@ -311,7 +311,7 @@ async function requestFormSubmit(event) {
         const res = await donateFetach.json()
 
         if (donateFetach.status === 200) {
-            console.log("donate req done")
+            
             SetInnerTExt('success', "Successfully Your Request Done Please waiting for approved!!")
             valueNone('quantity')
             valueNone('donate-date')

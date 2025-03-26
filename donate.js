@@ -1,4 +1,29 @@
 
+async function submitBtnDisabled() {
+    try {
+        const auth_donate = localStorage.getItem('donate_id')
+        console.log(auth_donate)
+        if (auth_donate) {
+            const btn = document.getElementById('donate-post-btn')
+            btn.disabled = true
+            btn.style.opacity = '0.2';
+        }
+        if (auth_donate === 'undefined') {
+            const disBtn = document.getElementById('donate-post-btn')
+            
+            disBtn.disabled =false
+            disBtn.style.opacity = '1.0'; 
+            
+        }
+    }
+    catch {
+        console.log("doante.js a submitBtnDisaabled function")
+    }
+
+}
+
+submitBtnDisabled()
+
 document.getElementById('donateSuccess').innerText = ""
 
 document.getElementById('donate-post-btn').addEventListener('click', (event) => {
@@ -12,7 +37,7 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
     const address = getElementByIdOfValue('address')
     const zila = getElementByIdOfValue('zila')
 
-    if(!center || !birth || !bloodtype || !address || !zila){
+    if (!center || !birth || !bloodtype || !address || !zila) {
         alert("please fill up all data!")
         return;
     }
