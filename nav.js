@@ -96,7 +96,7 @@ async function setDoanteId() {
     try {
 
 
-        const donateFetch = await fetch(`http://127.0.0.1:8000/doanteDetails/${user_id}/`)
+        const donateFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/doanteDetails/${user_id}/`)
         const data = await donateFetch.json()
         if (data.done) {
             localStorage.setItem('Donate', 'Done')

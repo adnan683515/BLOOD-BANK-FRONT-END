@@ -94,7 +94,7 @@ async function displayDonate(data) {
                     const informaton = await user.json()
                     if (informaton !== undefined) {
 
-                
+
 
 
                         const { picture, username, first_name, last_name, email, mobile, usertype } = informaton;
@@ -157,7 +157,7 @@ async function displayDonate(data) {
                         `
 
                         parent.appendChild(div)
-                
+
                     }
 
                 }
@@ -192,7 +192,7 @@ async function displayDonate(data) {
         SetInnerTExt('ANEG', ANEGI)
         ValuSet('ANEGIPROG', ANEGI)
 
-        
+
     }
     catch {
         console.log("displaydonate function a display korte problem hocce")
@@ -205,7 +205,7 @@ function dontGiveBlood() {
 
 async function details(...data) {
     const [pic, first_name, last_name, email, address, mobile, usertype, last_donation_date, donation_center, distics, dibo, date_of_birth, bloodType] = data
-    
+
     details_modal.showModal()
 
 
@@ -251,6 +251,13 @@ async function searchDontate() {
 
     const value = document.getElementById('searchBlood').value;
     document.getElementById('searchBlood').value = ""
+    BPOSI = 0; BNEGi = 0;
+    APOSI = 0;
+    ANEGI = 0;
+    ABPOSI = 0;
+    ABNEGI = 0;
+    OPOSI = 0;
+    ONEGI = 0;
 
     try {
         const searchFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/searchBlood/${value}/`)
@@ -272,12 +279,12 @@ async function requestForm(...rest) {
     const [id, name, blood, intrarested] = rest
     donateid = id
     eligibility = intrarested
-    
+
     innerTextNone('req-username')
     innerTextNone('blood-req')
     SetInnerTExt('req-username', name)
     SetInnerTExt('blood-req', blood)
-    
+
 }
 
 async function requestFormSubmit(event) {
@@ -302,7 +309,7 @@ async function requestFormSubmit(event) {
 
     try {
 
-        const donateFetach = await fetch('http://127.0.0.1:8000/bloodRequest/', {
+        const donateFetach = await fetch('https://blood-bank-backend-beta.vercel.app/bloodRequest/', {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(obj)
@@ -311,7 +318,7 @@ async function requestFormSubmit(event) {
         const res = await donateFetach.json()
 
         if (donateFetach.status === 200) {
-            
+
             SetInnerTExt('success', "Successfully Your Request Done Please waiting for approved!!")
             valueNone('quantity')
             valueNone('donate-date')

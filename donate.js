@@ -102,7 +102,7 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
 
 
 
-// http://127.0.0.1:8000/doanteDetails/11/
+
 
 
 async function successfullyDonateCard(user) {
@@ -117,7 +117,7 @@ async function successfullyDonateCard(user) {
 
 
         try {
-            const donateDetailsFetch = await fetch(`http://127.0.0.1:8000/doanteDetails/${user}/`)
+            const donateDetailsFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/doanteDetails/${user}/`)
             const data = await donateDetailsFetch.json()
             console.log(data)
             const parent = document.getElementById('card-of-donate')

@@ -11,7 +11,7 @@ async function loadAllRequest() {
         return
     }
     try {
-        const allRequestFetch = await fetch(`http://127.0.0.1:8000/requestOfuser/${donate_id}/`)
+        const allRequestFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/requestOfuser/${donate_id}/`)
         const allData = await allRequestFetch.json()
         console.log(allData)
     }
