@@ -25,7 +25,7 @@ fetch('nav.html')
                     </div>
             `
             navItemContainer.innerHTML += `
-                        <li id="signup"><a href="signup.html">signup</a></li>
+                        <li id="signup"><a href="index.html">signup</a></li>
                             <li id="login"><a href="login.html">login</a></li>
                             
             `
