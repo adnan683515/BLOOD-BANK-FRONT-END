@@ -142,9 +142,9 @@ async function displayDonate(data) {
                                                 <button onclick="details('${picture}','${first_name}','${last_name}','${email}','${element?.address}','${mobile}','${usertype}','${element?.last_donation_date}','${element?.donation_center}','${element?.distics}','${element?.eligibility}','${element?.date_of_birth}','${element?.bloodType}')" class="btn">Details</button>
                                                 
 
-                                                <div id="request-btn-validation">
+                                                <div id="requestBtnToggle">
 
-                                                    <button onclick="request.showModal(),requestForm('${element.id}','${username}','${element?.bloodType}','${element?.eligibility}')" class="btn">Request</button>
+                                                    <button onclick="requestForm('${element.id}','${username}','${element?.bloodType}','${element?.eligibility}')" class="btn">Request</button>
                                                 
 
                                                 </div>
@@ -155,6 +155,9 @@ async function displayDonate(data) {
                         
                         
                         `
+                        if (element?.eligibility) {
+
+                        }
 
                         parent.appendChild(div)
 
@@ -192,6 +195,10 @@ async function displayDonate(data) {
         SetInnerTExt('ANEG', ANEGI)
         ValuSet('ANEGIPROG', ANEGI)
 
+        SetInnerTExt('OPOS', OPOSI)
+
+
+
 
     }
     catch {
@@ -207,10 +214,6 @@ async function details(...data) {
     const [pic, first_name, last_name, email, address, mobile, usertype, last_donation_date, donation_center, distics, dibo, date_of_birth, bloodType] = data
 
     details_modal.showModal()
-
-
-
-
 
     const parent = document.getElementById('DonarDetails')
     parent.innerHTML = `
@@ -276,19 +279,29 @@ async function searchDontate() {
 let donateid = null
 let eligibility = null
 async function requestForm(...rest) {
-    const [id, name, blood, intrarested] = rest
-    donateid = id
-    eligibility = intrarested
 
-    innerTextNone('req-username')
-    innerTextNone('blood-req')
-    SetInnerTExt('req-username', name)
-    SetInnerTExt('blood-req', blood)
+    const [id, name, blood, intrarested] = rest
+
+    if (intrarested) {
+        request.showModal()
+        donateid = id
+        eligibility = intrarested
+
+        innerTextNone('req-username')
+        innerTextNone('blood-req')
+        SetInnerTExt('req-username', name)
+        SetInnerTExt('blood-req', blood)
+
+    }
+
+
+
 
 }
 
 async function requestFormSubmit(event) {
     event.preventDefault();
+
     const userid = localStorage.getItem('user')
     let quantity = parseInt(getElementByIdOfValue('quantity'))
     if (quantity <= 0) {
