@@ -55,7 +55,7 @@ async function loadAllRequest() {
         }
         document.getElementById('all-request-container').innerHTML = `
                     
-                <div class="flex justify-center items-center w-[100%]">
+                <div class="flex justify-end  ml-10 items-center w-[100%]">
                     <div id="loading-box" class="">
                         <span class="loading loading-ring loading-xs"></span>
                         <span class="loading loading-ring loading-sm"></span>
@@ -72,8 +72,8 @@ async function loadAllRequest() {
             await new Promise((resolve) => {
                 setTimeout(() => {
                     document.getElementById('loading-box').innerHTML = "";
-                    resolve(); 
-                }, 5000); 
+                    resolve();
+                }, 5000);
             });
 
             const parent = document.getElementById('all-request-container')
@@ -92,34 +92,45 @@ async function loadAllRequest() {
                 
                 
         
-                                <th>
-                                    <label>
-                                        <input value="f" type="checkbox" class="checkbox" />
-                                    </label>
-                                </th>
+                        
                                 <td>
                                     <div class="flex items-center gap-3">
                                         <div class="avatar">
                                             <div class="mask mask-squircle h-12 w-12">
                                                 <img src="${informatonData?.picture}"
                                                     alt="Avatar Tailwind CSS Component" />
+                                        
+                                            
+                                            
+                                                
                                             </div>
                                         </div>
                                         <div>
                                             <div class="font-bold">${element?.user?.username}</div>
-                                            <div class="text-sm opacity-50">United States</div>
+                                            <div class="text-sm text-white opacity-100">${element?.place}</div>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    Zemlak, Daniel and Leannon
-                                    <br />
-                                    <span class="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                                    <span class="badge badge-ghost badge-sm">B+ </span>
                                 </td>
-                                <td>Purple</td>
-                                <th>
-                                    <button class="btn btn-ghost btn-xs">details</button>
-                                </th>
+                                <td>${element?.status ==='Accepted' ? `<span class="bg-green-500 text-black px-3 py-1 rounded-md" >Accepted</span> `: `<span class="bg-white px-3 py-1 rounded-md text-black" >Pending</span>` } </td>
+                            
+                                <td>
+                                asdfasdfasdfadfs
+                                </td>
+                                <td>${element?.massage}  </td>
+                                <td class="flex gap-1" >
+                                <select class="select select-ghost">
+                                    <option disabled selected>Pick a Action</option>
+                                    
+                                    <option>Cencel</option>
+                                    <option>Accepted</option>
+                                </select>
+
+                                <span class="bg-white text-black px-3  rounded-md text-center flex justify-center items-center py-1"><div>save</div></span>
+                                </td>
+
                     
                 
                 

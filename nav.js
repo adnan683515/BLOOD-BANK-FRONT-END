@@ -38,7 +38,7 @@ fetch('nav.html')
             
             `
             document.getElementById('cart-container').innerHTML += `
-                        <span class="text-lg font-bold">8 Request</span>
+                        <span id="setCoountRequest" class="text-lg font-bold">0 Request</span>
                                 
                                 <div class="card-actions">
                                     <button id="all-request-btn" class="px-2 py-2 text-white rounded-md   btn-block bg-red-700">View All Request</button>
@@ -64,6 +64,29 @@ fetch('nav.html')
             window.location.href = "login.html"
 
         })
+
+
+        async function navCountRequest(params) {
+            const donate_id = getLocalStorageItem('donate_id')
+            if (!donate_id) {
+                return
+            }
+            try {
+                const allReq = await fetch(`https://blood-bank-backend-beta.vercel.app/requestOfuser/${donate_id}/`)
+                const dataReq = await allReq.json()
+                
+                document.getElementById('setTotalReq').innerText = dataReq?.length
+                document.getElementById('setCoountRequest').innerText=`${dataReq?.length} Request`
+
+
+            }
+            catch {
+                console.log("Hello")
+            }
+        }
+
+        navCountRequest()
+
 
         document.getElementById('all-request-btn').addEventListener('click', () => {
             window.location.href = "profile.html"
@@ -94,8 +117,6 @@ async function setDoanteId() {
     }
 
     try {
-
-
         const donateFetch = await fetch(`https://blood-bank-backend-beta.vercel.app/doanteDetails/${user_id}/`)
         const data = await donateFetch.json()
         if (data.done) {
