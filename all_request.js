@@ -184,7 +184,7 @@ const handleBloodReqStatus = async (bloodReqId, userId,bloodId,beg,place,mobile,
     console.log(obj)
     try {
 
-        const reqPromise = await fetch(`http://127.0.0.1:8000/bloodReqAction/${bloodReqId}/?user=${userId}`, {
+        const reqPromise = await fetch(`https://blood-bank-backend-beta.vercel.app/bloodReqAction/${bloodReqId}/?user=${userId}`, {
             method: "PUT",
             headers: {
                 "Content-type": "application/json",
