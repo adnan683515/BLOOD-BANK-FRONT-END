@@ -12,7 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +70,7 @@
     <main>
 
 
-        <div>
+        <div class="mb-5">
             <div id="table-conatiner" class="overflow-x-auto  my-18 lg:w-[95%] mx-auto">
                 <table id="table-header" class="table bg-red-700 text-white">
                     <!-- head -->
@@ -89,11 +90,15 @@
                     <tbody class="" id="all-request-container">
 
 
-
                     </tbody>
                     <!-- foot -->
 
                 </table>
+
+                
+            </div>
+            <div id="loading-div" class="flex justify-center items-center">
+                
             </div>
         </div>
 

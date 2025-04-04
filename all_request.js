@@ -20,7 +20,7 @@ async function loadAllRequest() {
             document.getElementById('table-header').innerHTML = ""
             document.getElementById('table-conatiner').innerHTML = ""
 
-            document.getElementById('table-conatiner').innerHTML = `
+            document.getElementById('loading-div').innerHTML = `
             
             <div class="flex justify-center items-center w-[100%]">
                 <div class="">
@@ -53,9 +53,9 @@ async function loadAllRequest() {
 
             return
         }
-        document.getElementById('all-request-container').innerHTML = `
+        document.getElementById('loading-div').innerHTML = `
                     
-                <div class="flex justify-end  ml-10 items-center w-[100%]">
+                <div class="flex justify-center  items-center w-[100%]">
                     <div id="loading-box" class="">
                         <span class="loading loading-ring loading-xs"></span>
                         <span class="loading loading-ring loading-sm"></span>
@@ -73,7 +73,7 @@ async function loadAllRequest() {
                 setTimeout(() => {
                     document.getElementById('loading-box').innerHTML = "";
                     resolve();
-                }, 5000);
+                }, 2000);
             });
 
             const parent = document.getElementById('all-request-container')
@@ -114,21 +114,20 @@ async function loadAllRequest() {
                                 <td>
                                     <span class="badge badge-ghost badge-sm">B+ </span>
                                 </td>
-                                <td>${element?.status ==='Accepted' ? `<span class="bg-green-500 text-black px-3 py-1 rounded-md" >Accepted</span> `: `<span class="bg-white px-3 py-1 rounded-md text-black" >Pending</span>` } </td>
+                                <td>${element?.status === 'Accepted' ? `<span class="bg-green-500 text-black px-3 py-1 rounded-md" >Accepted</span> ` : `<span class="bg-white px-3 py-1 rounded-md text-black" >Pending</span>`} </td>
                             
                                 <td>
-                                asdfasdfasdfadfs
+                                ${element?.mobile}
                                 </td>
                                 <td>${element?.massage}  </td>
-                                <td class="flex gap-1" >
-                                <select class="select select-ghost">
-                                    <option disabled selected>Pick a Action</option>
-                                    
-                                    <option>Cencel</option>
-                                    <option>Accepted</option>
+                                <td class="flex gap-1">
+                                <select id="selectStatus${element.id}" class="select select-ghost text-white">
+                                    <option selected disabled>Pick a Action</option>
+                                    <option class="text-black">pending</option>
+                                    <option class="text-black" >Accepted</option>
+                    
                                 </select>
-
-                                <span class="bg-white text-black px-3  rounded-md text-center flex justify-center items-center py-1"><div>save</div></span>
+                                <span class="bg-white text-black px-3  rounded-md text-center flex justify-center items-center py-1"><div onclick="handleBloodReqStatus('${element.id}','${element?.user?.id}','${element?.DonateBlood?.id}','${element?.numberOfBag}','${element?.place}','${element?.mobile}','${element?.massage}','${element?.donateDate}')">save</div></span>
                                 </td>
 
                     
@@ -158,3 +157,46 @@ async function loadAllRequest() {
 
 }
 loadAllRequest()
+
+
+
+const handleBloodReqStatus = async (bloodReqId, userId,bloodId,beg,place,mobile,massage,donateDate) => {
+
+    console.log(userId, bloodReqId)
+    let status = document.getElementById(`selectStatus${bloodReqId}`).value
+    if(status == 'Pick a Action'){
+        alert("plase select a action")
+        status=""
+        return; 
+    }
+    console.log(status)
+    const obj = {
+        id: bloodReqId,
+        numberOfBag: beg,
+        donateDate: donateDate,
+        place: place,
+        mobile: mobile,
+        status: status,
+        massage: massage,
+        user: userId,
+        DonateBlood: bloodId
+    }
+    console.log(obj)
+    try {
+
+        const reqPromise = await fetch(`http://127.0.0.1:8000/bloodReqAction/${bloodReqId}/?user=${userId}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(obj)
+        })
+        if(reqPromise.ok){
+            console.log("YESS UPDATe")
+        }
+
+    }
+    catch {
+        console.log("HandleBloodReqStatus problem")
+    }
+}

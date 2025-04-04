@@ -36,8 +36,9 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
     const checkbox = document.getElementById('check')
     const address = getElementByIdOfValue('address')
     const zila = getElementByIdOfValue('zila')
+    const phone = getElementByIdOfValue('phone')
 
-    if (!center || !birth || !bloodtype || !address || !zila) {
+    if (!center || !birth || !bloodtype || !address || !zila || !phone) {
         alert("please fill up all data!")
         return;
     }
@@ -57,7 +58,8 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
         address: address,
         last_donation_date: lastDonate,
         eligibility: ck,
-        donation_center: center
+        donation_center: center,
+        phone:phone
     }
 
     valueNone('center')
