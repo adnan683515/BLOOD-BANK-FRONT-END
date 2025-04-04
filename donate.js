@@ -10,10 +10,10 @@ async function submitBtnDisabled() {
         }
         if (auth_donate === 'undefined') {
             const disBtn = document.getElementById('donate-post-btn')
-            
-            disBtn.disabled =false
-            disBtn.style.opacity = '1.0'; 
-            
+
+            disBtn.disabled = false
+            disBtn.style.opacity = '1.0';
+
         }
     }
     catch {
@@ -59,7 +59,7 @@ document.getElementById('donate-post-btn').addEventListener('click', (event) => 
         last_donation_date: lastDonate,
         eligibility: ck,
         donation_center: center,
-        phone:phone
+        phone: phone
     }
 
     valueNone('center')
@@ -179,3 +179,16 @@ const user = localStorage.getItem('user')
 if (user) {
     successfullyDonateCard(user)
 }
+
+
+
+const handleUpdateDonateForm = () => {
+    let OnOFF = document.getElementById('toggolebtn').checked
+    if(OnOFF){
+        OnOFF = document.getElementById('toggolebtn').checked = false
+    }
+    document.getElementById('toggolebtn').checked = true
+    console.log(document.getElementById('toggolebtn').value)
+}
+
+

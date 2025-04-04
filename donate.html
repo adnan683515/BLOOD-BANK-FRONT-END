@@ -257,10 +257,40 @@
 
         <!-- Open the modal using ID.showModal() method -->
 
-        <dialog id="UpdateDonate" class="modal">
-            <div class="modal-box">
-                <h3 class="text-lg font-bold">Hello!</h3>
-                <p class="py-4">Press ESC key or click outside to close</p>
+        <dialog id="UpdateDonate" class="modal bg-[url(picture/blood_life.png)] ">
+            <div class="modal-box flex justify-center items-center">
+                <div class="space-y-2">
+                    <h3 class="text-lg font-bold">DONATE INFORMATION UPDATE!</h3>
+                    <div class="">
+
+                        <form action="" class="space-y-4  bg-red-700 text-black px-2 py-4">
+                            <input id="blood-type-put" type="text" placeholder="BLOOD TYPE" class="input  w-[100%]" />
+
+                            <input id="zila-put" type="text" placeholder="ZILA" class="input " />
+                            <input id="address-put" type="text" placeholder="ADDRESS" class="input " />
+
+                            <input id="last-date-put" type="text" placeholder="LAST DONATE" class="input " />
+
+                            <input id="birth-put" type="text" placeholder="DATE OF BIRTH" class="input " />
+
+                            <input id="donation-center-put" class="input" type="text" placeholder="DONATION CENTER">
+
+                            
+
+                            <fieldset class="fieldset p-4 bg-base-100 border border-base-300 rounded-box w-64">
+                                <legend class="fieldset-legend text-white">Interested  NoW</legend>
+                                <label class="fieldset-label">
+                                    <input id="toggolebtn" type="checkbox" class="toggle toggle-success" />
+                                </label>
+                            </fieldset>
+
+
+                            <button class="bg-white px-4 py-2 rounded-md text-black hover:bg-black hover:text-white" >UPDATE</button>
+                        </form>
+
+
+                    </div>
+                </div>
             </div>
             <form method="dialog" class="modal-backdrop">
                 <button>close</button>
@@ -268,6 +298,8 @@
         </dialog>
 
 
+
+        <button onclick="handleUpdateDonateForm()">Toggle</button>
     </main>
     <footer class="footer grid lg:grid-cols-3 bg-red-700 text-white text-base-content p-10">
         <div>

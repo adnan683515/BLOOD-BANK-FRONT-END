@@ -49,6 +49,8 @@ fetch('nav.html')
         
             <a class="cursor-pointer" id="logout">logout</a>
             <a class="cursor-pointer" href="donate.html" id="donate-post">Donate</a>
+        
+
             `
         }
         document.getElementById('logout').classList.remove('hidden')
